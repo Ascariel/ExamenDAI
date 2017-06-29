@@ -1,5 +1,5 @@
     <h1 class=""><?= $title ?></h1><br>
-    <a href="/backend/usuario/new" class="btn btn-xs btn-info">Ingresar Usuario</a>
+    <a href="/backend/usuario/new" class="btn btn-xs btn-info">Nueva Solicitud</a>
 
     <table id="category_table" class="table data-table table-hover table-striped table-condensed ">
       <thead >
