@@ -1,5 +1,6 @@
     <h1 class=""><?= $title ?></h1><br>
     <a href="/backend/usuario/new" class="btn btn-xs btn-info">Ingresar Usuario</a>
+    <a href="/backend/atencion/new" class="btn btn-danger  btn-xs eliminar">Generar Atencion</a>
 
     <table id="category_table" class="table data-table table-hover table-striped table-condensed ">
       <thead >
@@ -35,9 +36,6 @@
             </td>
             <td>
                 <a href="/backend/usuario/delete?id=<?=$usuario_id?>" class="btn btn-danger  btn-xs btn-block eliminar">Eliminar</a>                  
-            </td>
-            <td>
-                <a href="/backend/solicitudes/new?id=<?=$usuario_id?>" class="btn btn-danger  btn-xs btn-block eliminar">Generar Solicitud</a>                  
             </td>            
           </tr>
         <?php endforeach ?>

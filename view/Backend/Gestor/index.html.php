@@ -40,7 +40,7 @@
                 </ul>
             </div>
           <div class="col-md-12">
-            <a href="/backend/persona/edit?id=<?= $_SESSION['selectedCliente']['id'] ?>" class="btn btn-success btn-sm btn-block">Editar</a>
+            <a href="#/edit?id=<?= $_SESSION['selectedCliente']['id'] ?>" class="btn btn-success btn-sm btn-block">Editar</a>
          </div>
 
         </div>
@@ -65,7 +65,7 @@
                 </ul>
             </div>
           <div class="col-md-12">
-            <a href="/backend/persona/edit?id=<?= $carga['carga_id'] ?>" class="btn btn-success btn-sm btn-block">Editar</a>
+            <a href="#/edit?id=<?= $carga['carga_id'] ?>" class="btn btn-success btn-sm btn-block">Editar</a>
          </div>
         </div>
         <!-- /.row -->
@@ -253,7 +253,7 @@
       }
 
       $.ajax({
-        url: "/backend/persona/asignarAmbulancia",
+        url: "#/asignarAmbulancia",
         type: "POST",
         dataType:'json',
         data: { user_id: user_id},
@@ -270,7 +270,7 @@
       var rut =  $("#rut_search").val()
 
       $.ajax({
-        url: "/backend/persona/setSelectedClient",
+        url: "#/setSelectedClient",
         type: "POST",
         dataType:'json',
         data: { rut: rut},

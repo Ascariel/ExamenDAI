@@ -3,7 +3,7 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Abogados Duralex</h1>
-        <p>Su mejor opcion!</p>
+        <p>La mejor opcion al mejor precio. Cotize ahora!</p>
         <p><a class="btn btn-primary btn-lg" href="http://localhost:8081/frontend/auth/signin" role="button">Ingresar &raquo;</a></p>
       </div>
     </div>

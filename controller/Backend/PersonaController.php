@@ -13,8 +13,8 @@ class PersonaController extends CrudController {
     protected $entity = null;
     protected $module = 'Persona';
     protected $route = [
-        'index' => '/backend/Persona',
-        'edit' => '/backend/Persona/edit',
+        'index' => '#',
+        'edit' => '#/edit',
     ];
     protected $vtitles = [
         'index'=>'Listado de Personas',

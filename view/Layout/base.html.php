@@ -33,6 +33,26 @@
                     <li><a href="/backend/welcome">Inicio</a></li>
                     <li><a href="javascript:void(0);"><small><b><?=$_SESSION['user']["nombre"] . ' ' . $_SESSION['user']["apellido"]?></b></small> </a>
                     </li>
+
+                   <!-- LOGICA ADMIN -->
+                  <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'ADMINISTRADOR'): ?>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            Administrar <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="adminMenu">
+                            <li><a href="/backend/usuario">Usuarios</a></li>
+                            <li><a href="/backend/abogado">Abogados</a></li>
+                            <li><a href="/backend/atencion">Atenciones</a></li>
+
+                          </ul>
+                        </li>
+
+                  <?php else: ?>
+                      <li><a href="/backend/atenciones/index_cliente">Ver Atenciones Cliente</a></li>
+                  <?php endif ?>
+                   <!-- LOGICA ADMIN -->
+
               	   <li><a href="/frontend/auth/logout">Cerrar Sesion</a></li>
                 <?php else: ?>
                     <li><a href="/frontend/auth/signin">Inicio</a></li>

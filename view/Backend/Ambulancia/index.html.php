@@ -65,7 +65,7 @@
     //   }
 
     //   $.ajax({
-    //     url: "/backend/persona/asignarAmbulancia",
+    //     url: "#/asignarAmbulancia",
     //     type: "POST",
     //     dataType:'json',
     //     data: { user_id: user_id},
