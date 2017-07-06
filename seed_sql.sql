@@ -80,3 +80,10 @@ insert  into `usuario`(`id`,`rut`,`nombre`,`apellido`,`direccion`,`telefonos`,`f
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+
+
+
+insert  into `usuario`(`rut`,`nombre`,`apellido`,`direccion`,`telefonos`,`fecha_creacion`,`tipo_persona`,`rol`,`password`) values ('admin','admin','fuenzalida','antonio varas 666','5556874','2016-10-20','NATURAL','ADMINISTRADOR','40bd001563085fc35165329ea1ff5c5ecbdbbeef');
+
+insert  into `usuario`(`rut`,`nombre`,`apellido`,`direccion`,`telefonos`,`fecha_creacion`,`tipo_persona`,`rol`,`password`) values ('cliente','cliente','fuenzalida','antonio varas 666','5556874','2016-10-20','NATURAL','CLIENTE','40bd001563085fc35165329ea1ff5c5ecbdbbeef');
