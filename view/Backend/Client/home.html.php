@@ -26,7 +26,7 @@
                 </ul>
             </div>
           <div class="col-md-12">
-            <a href="/backend/persona/edit?id=<?= $_SESSION['user']['id'] ?>" class="btn btn-success btn-sm btn-block">Editar</a>
+            <a href="#/edit?id=<?= $_SESSION['user']['id'] ?>" class="btn btn-success btn-sm btn-block">Editar</a>
          </div>
 
         </div>
@@ -51,7 +51,7 @@
                 </ul>
             </div>
           <div class="col-md-12">
-            <a href="/backend/persona/edit?id=<?= $carga['carga_id'] ?>" class="btn btn-success btn-sm btn-block">Editar</a>
+            <a href="#/edit?id=<?= $carga['carga_id'] ?>" class="btn btn-success btn-sm btn-block">Editar</a>
          </div>
         </div>
         <!-- /.row -->

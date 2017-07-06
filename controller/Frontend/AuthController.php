@@ -41,11 +41,17 @@ class AuthController extends Controller {
         }
         unset($usuario['password']);
         $_SESSION['user'] = $usuario;
+        $_SESSION['rol'] = $usuario['rol'];
+
+        // if ($usuario['rol'] == 'ADMINISTRADOR') {
+        //     # code...
+        // }
         $this->redirect('/backend/welcome');
     }   
 
     function logoutAction(){
       unset($_SESSION['user']);
+      unset($_SESSION['rol']);
       $this->redirect('/frontend');
     }
 

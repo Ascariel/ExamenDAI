@@ -46,7 +46,7 @@
 						<button type="submit" class="btn btn-success btn-block">Registrar</button>
 					</div>
 					<div class="col-md-6">
-						<a class="btn btn-default btn-block" href="/backend/persona">Volver</a>
+						<a class="btn btn-default btn-block" href="#">Volver</a>
 					</div>
 				</div>
 			</form>

@@ -1,0 +1,51 @@
+    <h1 class=""><?= $title ?></h1><br>
+    <a href="/backend/atencion/new" class="btn btn-xs btn-info">Nueva Atencion</a>
+
+    <table id="category_table" class="table data-table table-hover table-striped table-condensed ">
+      <thead >
+        <tr >
+          <th>ID Solicitud</th>
+          <th>ID Cliente</th>
+          <th>ID Abogado</th>
+          <th>Estado</th>
+          <th></th>
+        </tr>
+      </thead>
+
+
+      <tbody>
+
+        <?php foreach($atenciones as $row): ?>
+          <?php $atencion_id = $row['id'] ?>
+
+          <tr>
+            <td><?= $row['id_atencion'] ?></td>
+            <td><?= $row['id_cliente'] ?></td>
+            <td><?= $row['id_abogado'] ?></td>
+            <td><?= $row['estado'] ?></td>
+            <td><?= $row['direccion'] ?></td>
+            <!-- Botones CRUD :) -->
+
+            <td>
+                <a href="/backend/atencion/anular?id=<?= $row['id_atencion']?>&estado=Anulada" class="btn btn-danger  btn-xs btn-block eliminar">Anular</a>                  
+            </td> 
+            <td>
+                <a href="/backend/atencion/anular?id=<?= $row['id_atencion']?>&estado=Perdida" class="btn btn-warning  btn-xs btn-block eliminar">Perdida</a>                  
+            </td> 
+            <td>
+                <a href="/backend/atencion/anular?id=<?= $row['id_atencion']?>&estado=Confirmada" class="btn btn-success  btn-xs btn-block eliminar">Confirmar</a>                  
+            </td>                                   
+          </tr>
+        <?php endforeach ?>
+      </tbody>
+
+    </table>
+
+
+<!-- <script type="text/javascript">
+  $(function(){
+   $("table.data-table").DataTable({
+     "dom": "f"
+   });
+  });  
+</script> -->
