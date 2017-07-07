@@ -7,7 +7,7 @@
 
         <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-	    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.7/dt-1.10.15/datatables.min.css"/>
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.7/dt-1.10.15/datatables.min.css"/>
     </head>
     <body>
         <nav class="navbar navbar-default navbar-static-top">
@@ -21,15 +21,15 @@
                 <span class="icon-bar"></span>
               </button>
 
-              <a class="navbar-brand pull-right	" href="/">AbogadosDuralex</a>
+              <a class="navbar-brand pull-right " href="/">AbogadosDuralex</a>
               <a href="/">
-              	<img style="height:50px" src="/images/logo4.png">
+                <img style="height:50px" src="/images/logo4.png">
               </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                <?php if(!empty($_SESSION['user'])): ?>
+                <?php if (!empty($_SESSION['user'])): ?>
                     <li><a href="/backend/welcome">Inicio</a></li>
                     <li><a href="javascript:void(0);"><small><b><?=$_SESSION['user']["nombre"] . ' ' . $_SESSION['user']["apellido"]?></b></small> </a>
                     </li>
@@ -48,16 +48,33 @@
                           </ul>
                         </li>
 
-                  <?php else: ?>
-                      <li><a href="/backend/atenciones/index_cliente">Ver Atenciones Cliente</a></li>
-                  <?php endif ?>
+                  <?php endif?>
                    <!-- LOGICA ADMIN -->
 
-              	   <li><a href="/frontend/auth/logout">Cerrar Sesion</a></li>
+
+                  <!--LOGICA SECRETARIA -->
+                   <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'SECRETARIA'): ?>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            Administrar <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="adminMenu">
+                            <li><a href="/backend/usuario">Usuarios</a></li>
+                            <li><a href="/backend/abogado">Abogados</a></li>
+
+                          </ul>
+                        </li>
+
+
+                  <?php endif?>
+
+                     <!--LOGICA SECRETARIA -->
+
+                   <li><a href="/frontend/auth/logout">Cerrar Sesion</a></li>
                 <?php else: ?>
                     <li><a href="/frontend/auth/signin">Inicio</a></li>
                     <!-- <li><a href="/frontend/default/search">Buscador Sintomas</a></li> -->
-        	    <?php endif; ?>
+              <?php endif;?>
 
               </ul>
             </div><!-- /.navbar-collapse -->
@@ -70,7 +87,7 @@
         <script src="/js/tables.js"></script>
 
         <div class="container">
-          <?php @include($this->view) ?>
+          <?php @include $this->view?>
           <br><br><br>
         </div>
     </body>
