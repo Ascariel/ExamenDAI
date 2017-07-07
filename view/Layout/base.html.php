@@ -68,6 +68,7 @@
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/datatables.min.js"></script>
         <script src="/js/tables.js"></script>
+        <script src="/js/highcharts.js"></script>
 
         <div class="container">
           <?php @include($this->view) ?>

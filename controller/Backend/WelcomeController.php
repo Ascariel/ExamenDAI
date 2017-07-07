@@ -2,8 +2,6 @@
 namespace Controller\Backend;
 
 use Library\Controller;
-use Model\Company;
-use Model\User;
 
 
 class WelcomeController extends Controller {
@@ -12,5 +10,9 @@ class WelcomeController extends Controller {
     function indexAction(){
     	$this->authorizeUser();
         return [];
+    }
+
+    function statsAction(){
+    	return [];
     }
 }
