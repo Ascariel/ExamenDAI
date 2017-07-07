@@ -4,7 +4,7 @@
 		<div class="col-md-6 col-md-offset-3">
 			<h1 class="text-center">Editar Abogado</h1>
 			<br>
-			<form role="form" name="usuario" action="/backend/usuario/update?id=<?=$usuario['id']?>" method="post">
+			<form role="form" name="usuario" action="/backend/abogado/update?id=<?=$abogado['id']?>" method="post">
 
 				<div class="form-group">
 					Rut<input type="text" value="<?=$abogado['rut']?>" name="abogado[rut]" class="form-control ">

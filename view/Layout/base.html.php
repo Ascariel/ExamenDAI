@@ -42,7 +42,7 @@
                           </a>
                           <ul class="dropdown-menu" role="menu" aria-labelledby="adminMenu">
                             <li><a href="/backend/usuario">Usuarios</a></li>
-                            <li><a href="/backend/new">Abogados</a></li>
+                            <li><a href="/backend/abogado">Abogados</a></li>
                             <li><a href="/backend/atencion">Atenciones</a></li>
 
                           </ul>
