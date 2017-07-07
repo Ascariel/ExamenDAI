@@ -13,5 +13,10 @@ class AbogadoController extends Controller {
       return [];
     }
 
+    function indexAction()
+    {
+    	return[];
+    }
+
     
 }
