@@ -36,7 +36,7 @@ class AbogadoController extends Controller {
 
       $id = $_GET['id'];
       (new Abogado)->delete($id);
-      //$this->redirect('/backend/abogado?success=true');
+      $this->redirect('/backend/abogado?success=true');
     }
 
 	function updateAction(){
