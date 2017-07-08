@@ -26,6 +26,10 @@
 				</div> 	
 
 				<div class="form-group">
+					Fecha<input type="date" required="" name="usuario[fecha_creacion]" class="form-control ">
+				</div>  
+
+				<div class="form-group">
 					<select name="usuario[tipo_persona]" class="form-control">
 						<option value="NATURAL">NATURAL</option>
 						<option value="JURIDICA">JURIDICA</option>

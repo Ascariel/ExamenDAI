@@ -13,13 +13,13 @@ class UsuarioController extends Controller {
     function indexAction() {
       $this->authorizeUser();
 
-      $query_usuarios = "select * from usuario;";
+      $query_usuarios = "select * from usuario where rol != 'CLIENTE';";
       $usuarios = (new Usuario)->customQuery($query_usuarios)->fetchAll();
       return ["usuarios" => $usuarios, "title"=>"Listado Usuarios"];
     }
     function newAction(){
       $this->authorizeUser();
-      return ['title' => "Ingresar Nueva Categoria"];
+      return ['title' => "Ingresar Nueva Usuario"];
     }
 
     function editAction(){
@@ -54,6 +54,7 @@ class UsuarioController extends Controller {
       $this->authorizeUser();
 
       $_POST['usuario']['password'] = sha1($_POST['usuario']['password']);
+
       $usuario = new Usuario;
       $usuario->create($_POST["usuario"]);
 
@@ -121,5 +122,14 @@ class UsuarioController extends Controller {
       $usuarios = (new Usuario)->customQuery($query_usuarios)->fetchAll();
       return ["usuarios" => $usuarios, "title"=>"Listado Clientes"];
     }
+
+     function clienteCrudAction(){
+        $this->authorizeUser();
+
+      $query_usuarios = "select * from usuario where rol = 'CLIENTE'";
+      $usuarios = (new Usuario)->customQuery($query_usuarios)->fetchAll();
+      return ["usuarios" => $usuarios, "title"=>"Listado Clientes"];
+    }
+    
     
 }
