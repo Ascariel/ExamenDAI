@@ -74,7 +74,7 @@
                      <!-- Logica Gerente -->
 
                     <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'GERENTE'): ?>
-                        <li><a href="/backend/welcome/stats">Estadisticas</a></li>
+                        <li><a href="/backend/usuario/estadisticas">Estadisticas</a></li>
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             Administrar <span class="caret"></span>
