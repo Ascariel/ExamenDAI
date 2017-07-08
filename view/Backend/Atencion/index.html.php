@@ -11,6 +11,7 @@
           <th>Hora</th>
           <th>Estado</th>
           <th></th>
+          <th></th>
         </tr>
       </thead>
 
@@ -38,7 +39,10 @@
             </td> 
             <td>
                 <a href="/backend/atencion/confirmar?id=<?= $row['id_atencion']?>&estado=Confirmada" class="btn btn-success  btn-xs btn-block eliminar">Confirmar</a>                  
-            </td>                                   
+            </td>  
+            <td> 
+                <a href="/backend/atencion/realizada?id=<?= $row['id_atencion']?>&estado=Realizada" class="btn btn-info  btn-xs btn-block eliminar">Realizada</a>                  
+            </td>                                             
           </tr>
         <?php endforeach ?>
       </tbody>
