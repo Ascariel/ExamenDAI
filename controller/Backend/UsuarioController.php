@@ -4,7 +4,7 @@ namespace Controller\Backend;
 use Library\Controller;
 use Model\Entity\Usuario;
 use Model\Entity\Atencion;
-
+use Model\Entity\Abogado;
 
 class UsuarioController extends Controller {
     static $template = 'Layout/base.html.php';
@@ -77,9 +77,33 @@ class UsuarioController extends Controller {
     }
 
     function estadisticasAction(){
-      $clientes = (new Usuario)->customQuery("select * from usuario where rol = 'Cliente'")->fetchAll();
 
-      $query_atenciones = "select id_atencion, valor_hora, hora, fecha, ab.nombre as nombre_abogado, ab.apellido as apellido_abogado, u.nombre as nombre_cliente, u.apellido as apellido_cliente, estado from atencion a, usuario u, abogado ab where a.id_cliente = u.id and a.id_abogado = ab.id;";    
+      $estado =  isset($_GET['atenciones']) ? $_GET['atenciones']['estado'] : "";
+      $especialidad = isset($_GET['atenciones']) ? $_GET['atenciones']['especialidad'] : "";
+      $id_abogado = isset($_GET['atenciones']) ? $_GET['atenciones']['id_abogado'] : "";
+      $tipo_persona = isset($_GET['clientes']) ? $_GET['clientes']['tipo_persona'] : "";
+
+
+      $abogados = (new Abogado)->customQuery("select * from abogado");
+
+      $query_clientes = "select * from usuario where rol = 'Cliente'";
+      $query_atenciones = "select id_atencion, tipo_persona, especialidad, valor_hora, hora, fecha, ab.nombre as nombre_abogado, ab.apellido as apellido_abogado, u.nombre as nombre_cliente, u.apellido as apellido_cliente, estado from atencion a, usuario u, abogado ab where a.id_cliente = u.id and a.id_abogado = ab.id"; 
+
+      if($estado != ""){
+        $query_atenciones = $query_atenciones . " and estado = '{$estado}'" ;
+      }
+      if($especialidad != ""){
+        $query_atenciones = $query_atenciones . " and especialidad = '{$especialidad}'" ;
+      } 
+      if($id_abogado != ""){
+        $query_atenciones = $query_atenciones . " and a.id_abogado = '{$id_abogado}'" ;
+      }       
+      if($tipo_persona != ""){
+        $query_clientes = $query_clientes . " and tipo_persona = '{$tipo_persona}'" ;
+      }    
+               
+          
+      $clientes = (new Usuario)->customQuery($query_clientes)->fetchAll(); 
       $atenciones = (new Atencion)->customQuery($query_atenciones)->fetchAll();
 
       $valor_total_atenciones = 0;
@@ -87,7 +111,7 @@ class UsuarioController extends Controller {
           $valor_total_atenciones += $atencion['valor_hora'];
       }      
 
-      return ['clientes' =>  $clientes, 'atenciones' => $atenciones,  "valor_total_atenciones" => $valor_total_atenciones];
+      return ['clientes' =>  $clientes, 'atenciones' => $atenciones,  "valor_total_atenciones" => $valor_total_atenciones, 'abogados' => $abogados];
     }
 
       function vistaClienteAction(){
