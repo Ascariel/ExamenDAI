@@ -72,6 +72,7 @@
           <th>Nombre Cliente</th>
           <th>Nombre Abogado</th>
           <th>Valor Hora</th>
+          <th>Fecha</th>
           <th>Hora</th>
           <th>Estado</th>
         </tr>
@@ -87,6 +88,7 @@
             <td><?= $row['id_atencion'] ?></td>
             <td><?= $row['nombre_cliente']." " . $row['apellido_cliente']?></td>
             <td><?= $row['nombre_abogado'] ." " . $row['apellido_abogado'] ?></td>
+            <td><?= $row['fecha'] ?></td>
             <td><?= $row['valor_hora'] ?></td>
             <td><?= date("H:i", $hora) ?></td>
             <td><?= $row['estado'] ?></td>
