@@ -41,7 +41,7 @@
                             Administrar <span class="caret"></span>
                           </a>
                           <ul class="dropdown-menu" role="menu" aria-labelledby="adminMenu">
-                            <li><a href="/backend/usuario">Usuarios</a></li>
+                            <li><a href="/backend/cliente">Cliente</a></li>
                             <li><a href="/backend/abogado">Abogados</a></li>
                             <li><a href="/backend/atencion">Atenciones</a></li>
 
@@ -59,7 +59,8 @@
                             Administrar <span class="caret"></span>
                           </a>
                           <ul class="dropdown-menu" role="menu" aria-labelledby="adminMenu">
-                            <li><a href="/backend/usuario">Usuarios</a></li>
+                            <li><a href="/backend/atencion">Atenciones</a></li>
+                            <li><a href="/backend/usuario">Clientes</a></li>
                             <li><a href="/backend/abogado">Abogados</a></li>
 
                           </ul>
@@ -70,6 +71,46 @@
 
                      <!--LOGICA SECRETARIA -->
 
+                     <!-- Logica Gerente -->
+
+                    <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'GERENTE'): ?>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            Administrar <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="adminMenu">
+                            <li><a href="/backend/atencion">Atenciones</a></li>
+                            <li><a href="/backend/usuario">Clientes</a></li>
+                            <li><a href="/backend/abogado">Abogados</a></li>
+
+                          </ul>
+                        </li>
+
+
+                  <?php endif?>
+
+
+                     <!-- Logica Gerente -->
+
+                     <!-- Logica Cliente -->
+          
+                       <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'GERENTE'): ?>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            Administrar <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="adminMenu">
+                            <li><a href="/backend/atencion">Atenciones</a></li>
+                            
+                          </ul>
+                        </li>
+
+
+                  <?php endif?>
+
+
+
+                     <!-- Logica Cliente -->
                    <li><a href="/frontend/auth/logout">Cerrar Sesion</a></li>
                 <?php else: ?>
                     <li><a href="/frontend/auth/signin">Inicio</a></li>
