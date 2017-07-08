@@ -29,14 +29,7 @@
             <td><?= $row['rut'] ?></td>
             <!-- <td><?= $row['fecha_nacimiento'] ?></td>  -->
             <td><?= $row['telefonos'] ?></td>
-            <td><?= $row['direccion'] ?></td>
-            <!-- Botones CRUD :) -->
-            <td>
-                <a href="/backend/usuario/edit?id=<?=$usuario_id?>" class="btn btn-success  btn-xs btn-block">Editar</a>
-            </td>
-            <td>
-                <a href="/backend/usuario/delete?id=<?=$usuario_id?>" class="btn btn-danger  btn-xs btn-block eliminar">Eliminar</a>                  
-            </td>            
+            <td><?= $row['direccion'] ?></td>           
           </tr>
         <?php endforeach ?>
       </tbody>
@@ -78,9 +71,9 @@
           <th>ID Solicitud</th>
           <th>Nombre Cliente</th>
           <th>Nombre Abogado</th>
+          <th>Valor Hora</th>
+          <th>Hora</th>
           <th>Estado</th>
-          <th></th>
-          <th></th>
         </tr>
       </thead>
 
@@ -89,27 +82,15 @@
 
         <?php foreach($atenciones as $row): ?>
           <?php $atencion_id = $row['id'] ?>
-
+          <?php $hora = strtotime($row['hora']); ?>
           <tr>
             <td><?= $row['id_atencion'] ?></td>
             <td><?= $row['nombre_cliente']." " . $row['apellido_cliente']?></td>
             <td><?= $row['nombre_abogado'] ." " . $row['apellido_abogado'] ?></td>
+            <td><?= $row['valor_hora'] ?></td>
+            <td><?= date("H:i", $hora) ?></td>
             <td><?= $row['estado'] ?></td>
-            <td><?= $row['direccion'] ?></td>
-            <!-- Botones CRUD :) -->
-
-            <td>
-                <a href="/backend/atencion/anular?id=<?= $row['id_atencion']?>&estado=Anulada" class="btn btn-danger  btn-xs btn-block eliminar">Anular</a>                  
-            </td> 
-            <td>
-                <a href="/backend/atencion/perdida?id=<?= $row['id_atencion']?>&estado=Perdida" class="btn btn-warning  btn-xs btn-block eliminar">Perdida</a>                  
-            </td> 
-            <td>
-                <a href="/backend/atencion/confirmar?id=<?= $row['id_atencion']?>&estado=Confirmada" class="btn btn-success  btn-xs btn-block eliminar">Confirmar</a>                  
-            </td>  
-            <td> 
-                <a href="/backend/atencion/realizada?id=<?= $row['id_atencion']?>&estado=Realizada" class="btn btn-info  btn-xs btn-block eliminar">Realizada</a>                  
-            </td>                                             
+            <td><?= $row['direccion'] ?></td>                                         
           </tr>
         <?php endforeach ?>
       </tbody>
