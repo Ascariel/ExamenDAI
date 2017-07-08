@@ -18,7 +18,7 @@
       <tbody>
 
         <?php foreach ($abogados as $row): ?>
-          <?php $abogado_id = $row['id_abogado']?>
+          <?php $abogado_id = $row['id']?>
 
           <tr>
             <td><?=$row['rut']?></td>
