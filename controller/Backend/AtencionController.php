@@ -135,9 +135,9 @@ class AtencionController extends Controller {
     function clienteAtencionAction() {
       $this->authorizeUser();
 
-  
-      $query_atenciones = "select id_atencion, valor_hora, hora, fecha, ab.nombre as nombre_abogado, ab.apellido as apellido_abogado, u.nombre as nombre_cliente, u.apellido as apellido_cliente, estado from atencion a, usuario u, abogado ab where a.id_cliente =
-       u.id and a.id_abogado = ab.id;";
+      $idUsuario = $_SESSION['user']['id'];
+
+      $query_atenciones = "select id_atencion, id_cliente, valor_hora, hora, fecha, ab.nombre as nombre_abogado, ab.apellido as apellido_abogado, u.nombre as nombre_cliente, u.apellido as apellido_cliente, estado from atencion a, usuario u, abogado ab where a.id_cliente = u.id and a.id_abogado = ab.id and a.id_cliente = $idUsuario";
       $atenciones = (new Atencion)->customQuery($query_atenciones)->fetchAll();
       return ["atenciones" => $atenciones, "title"=>"Listado Atenciones"];
     }

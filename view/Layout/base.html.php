@@ -21,9 +21,9 @@
                 <span class="icon-bar"></span>
               </button>
 
-              <a class="navbar-brand pull-right " href="/">AbogadosDuralex</a>
+              <a class="navbar-brand pull-right " href="/">  AbogadosDuralex</a>
               <a href="/">
-                <img style="height:50px" src="/images/logo4.png">
+                <img style="height:50px" src="/images/abogado.png">
               </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
