@@ -22,7 +22,7 @@
         <?php foreach($usuarios as $row): ?>
           <?php $usuario_id = $row['id'] ?>
 
-         <?php  $usuario['direccion'] !== sha1($dire); ?>
+         
 
           <tr>
             <td><?= $usuario_id ?></td>
@@ -32,7 +32,7 @@
             <td><?= $row['tipo_persona'] ?></td>
             <!-- <td><?= $row['fecha_nacimiento'] ?></td>  -->
             <td><?= $row['telefonos'] ?></td>
-            <td><?= $dire ?></td>
+            <td><?= $$row['direccion'] ?></td>
             <!-- Botones CRUD :) -->
             <td>
                 <a href="/backend/usuario/edit?id=<?=$usuario_id?>" class="btn btn-success  btn-xs btn-block">Editar</a>
