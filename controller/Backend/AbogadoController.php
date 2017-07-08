@@ -65,5 +65,14 @@ class AbogadoController extends Controller {
       // $usuario->select('*', "id='$id'")->fetch();
       return ['title' => "Ingresar Nueva Abogado", 'abogado'=> $abogado];
     }    
+
+    function vistaAbogadoAction() {
+      $this->authorizeUser();
+
+      $query_abogados = "select * from abogado;";
+      $abogados = (new Abogado)->customQuery($query_abogados)->fetchAll();
+      return ["abogados" => $abogados, "title"=>"Listado Abogados"];
+    }
+
      
 }

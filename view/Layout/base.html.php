@@ -60,8 +60,8 @@
                           </a>
                           <ul class="dropdown-menu" role="menu" aria-labelledby="adminMenu">
                             <li><a href="/backend/atencion">Atenciones</a></li>
-                            <li><a href="/backend/usuario">Clientes</a></li>
-                            <li><a href="/backend/abogado">Abogados</a></li>
+                            <li><a href="/backend/usuario/vistaCliente">Clientes</a></li>
+                            <li><a href="/backend/abogado/vistaAbogado">Abogados</a></li>
 
                           </ul>
                         </li>
