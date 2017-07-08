@@ -7,10 +7,9 @@
 								<select class="form-control" name="atenciones[estado]">
 										<option value="">Por Estado</option>
 										<option value="Agendada">Agendada</option>
-										<option value="Reservada">Reservada</option>
+										<option value="Perdida">Perdida</option>
 										<option value="Confirmada">Confirmada</option>
 										<option value="Anulada">Anulada</option>
-										<option value="Rechazada">Rechazada</option>
 								</select>                
 						</div>
 						
@@ -63,47 +62,7 @@
 			
 </form>		
 
-		<h3 class="">Estadisticas Clientes</h3><br>
 
-		<table id="category_table" class="table data-table table-hover table-striped table-condensed ">
-			<thead >
-				<tr >
-					<th>ID</th>
-					<th>Nombre</th>
-					<th>Apellido</th>
-					<th>Rut</th>
-					<th>Tipo Persona</th>
-					<th>Telefono</th>
-					<th>Direccion</th>
-					<th></th>
-				</tr>
-			</thead>
-
-
-			<tbody>
-				<?php foreach($clientes as $row): ?>
-					<?php $usuario_id = $row['id'] ?>
-					
-					<tr>
-						<td><?= $usuario_id ?></td>
-						<td><?=  ucwords($row['nombre']) ?></td>
-						<td><?= $row['apellido'] ?></td>
-						<td><?= $row['rut'] ?></td>
-						<td><?= $row['tipo_persona'] ?></td>
-						<td><?= $row['telefonos'] ?></td>
-						<td><?= $row['direccion'] ?></td> 
-					</tr>
-				<?php endforeach ?>
-				<tr>
-						<td><b>Total Clientes:</b>  </td>
-						<td> <b> <?= count($clientes)  ?></b></td>
-				</tr>       
-			</tbody>
-
-		</table>
-
-
-		<hr>
 		 <h3 class="">Estadisticas Atenciones</h3><br>
 
 		<table id="category_table" class="table data-table table-hover table-striped table-condensed ">
@@ -154,3 +113,45 @@
 		</table>
 
 <hr>
+
+		<h3 class="">Estadisticas Clientes</h3><br>
+
+		<table id="category_table" class="table data-table table-hover table-striped table-condensed ">
+			<thead >
+				<tr >
+					<th>ID</th>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Rut</th>
+					<th>Tipo Persona</th>
+					<th>Telefono</th>
+					<th>Direccion</th>
+					<th></th>
+				</tr>
+			</thead>
+
+
+			<tbody>
+				<?php foreach($clientes as $row): ?>
+					<?php $usuario_id = $row['id'] ?>
+					
+					<tr>
+						<td><?= $usuario_id ?></td>
+						<td><?=  ucwords($row['nombre']) ?></td>
+						<td><?= $row['apellido'] ?></td>
+						<td><?= $row['rut'] ?></td>
+						<td><?= $row['tipo_persona'] ?></td>
+						<td><?= $row['telefonos'] ?></td>
+						<td><?= $row['direccion'] ?></td> 
+					</tr>
+				<?php endforeach ?>
+				<tr>
+						<td><b>Total Clientes:</b>  </td>
+						<td> <b> <?= count($clientes)  ?></b></td>
+				</tr>       
+			</tbody>
+
+		</table>
+
+
+		<hr>
