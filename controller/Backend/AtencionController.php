@@ -122,5 +122,14 @@ class AtencionController extends Controller {
       (new Atencion)->customQuery("update atencion set estado = 'Realizada' where id_atencion = $id");
       $this->redirect('/backend/atencion?success=true');
     }         
+
+
+    function vistaAtencionAction() {
+      $this->authorizeUser();
+
+      $query_atenciones = "select id_atencion, valor_hora, hora, fecha, ab.nombre as nombre_abogado, ab.apellido as apellido_abogado, u.nombre as nombre_cliente, u.apellido as apellido_cliente, estado from atencion a, usuario u, abogado ab where a.id_cliente = u.id and a.id_abogado = ab.id;";
+      $atenciones = (new Atencion)->customQuery($query_atenciones)->fetchAll();
+      return ["atenciones" => $atenciones, "title"=>"Listado Atenciones"];
+    }
     
 }
