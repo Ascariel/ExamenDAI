@@ -85,5 +85,12 @@ class UsuarioController extends Controller {
       return ['clientes' =>  $clientes, 'atenciones' =>  $atenciones];
     }
 
+      function vistaClienteAction(){
+        $this->authorizeUser();
+
+      $query_usuarios = "select * from usuario where rol = 'CLIENTE'";
+      $usuarios = (new Usuario)->customQuery($query_usuarios)->fetchAll();
+      return ["usuarios" => $usuarios, "title"=>"Listado Clientes"];
+    }
     
 }
