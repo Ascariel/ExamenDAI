@@ -14,7 +14,7 @@ class AtencionController extends Controller {
     function indexAction() {
       $this->authorizeUser();
 
-      $query_atenciones = "select id_atencion, nombre_abogado, apellido_abogado, nombre, apellido, estado from atencion a, usuario u, abogado ab where a.id_cliente = u.id and a.id_abogado = ab.id_abogado;";
+      $query_atenciones = "select id_atencion, ab.nombre as nombre_abogado, ab.apellido as apellido_abogado, u.nombre as nombre_cliente, u.apellido as apellido_cliente, estado from atencion a, usuario u, abogado ab where a.id_cliente = u.id and a.id_abogado = ab.id_abogado;";
       $atenciones = (new Atencion)->customQuery($query_atenciones)->fetchAll();
       return ["atenciones" => $atenciones, "title"=>"Listado Atenciones"];
     }

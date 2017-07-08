@@ -20,7 +20,7 @@
 
           <tr>
             <td><?= $row['id_atencion'] ?></td>
-            <td><?= $row['nombre']." " . $row['apellido']?></td>
+            <td><?= $row['nombre_cliente']." " . $row['apellido_cliente']?></td>
             <td><?= $row['nombre_abogado'] ." " . $row['apellido_abogado'] ?></td>
             <td><?= $row['estado'] ?></td>
             <td><?= $row['direccion'] ?></td>
