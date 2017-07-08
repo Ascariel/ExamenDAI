@@ -22,19 +22,19 @@ USE `abogados`;
 DROP TABLE IF EXISTS `abogado`;
 
 CREATE TABLE `abogado` (
-  `id_abogado` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `rut` varchar(25) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `apellido` varchar(255) NOT NULL,
   `fecha_contratacion` date NOT NULL,
   `especialidad` enum('Civil','Familia','Penalista','') NOT NULL,
   `valor_hora` int(11) NOT NULL,
-  PRIMARY KEY (`id_abogado`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `abogado` */
 
-insert  into `abogado`(`id_abogado`,`rut`,`nombre`,`apellido`,`fecha_contratacion`,`especialidad`,`valor_hora`) values (1,'15420763','Elvira','Vial','2016-06-07','Civil',10000),(2,'14230720','Cesar','Vargas','2016-08-09','Familia',15000);
+insert  into `abogado`(`id`,`rut`,`nombre`,`apellido`,`fecha_contratacion`,`especialidad`,`valor_hora`) values (1,'15420763','Elvira','Vial','2016-06-07','Civil',10000),(2,'14230720','Cesar','Vargas','2016-08-09','Familia',15000);
 
 /*Table structure for table `atencion` */
 
