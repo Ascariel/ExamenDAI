@@ -79,9 +79,9 @@ class UsuarioController extends Controller {
     function estadisticasAction(){
       $clientes = (new Usuario)->customQuery("select * from usuario where rol = 'Cliente'")->fetchAll();
 
-      $query_atenciones = "select id_atencion, ab.nombre as nombre_abogado, ab.apellido as apellido_abogado, u.nombre as nombre_cliente, u.apellido as apellido_cliente, estado from atencion a, usuario u, abogado ab where a.id_cliente = u.id and a.id_abogado = ab.id_abogado;";
+      $query_atenciones = "select id_atencion, ab.nombre as nombre_abogado, ab.apellido as apellido_abogado, u.nombre as nombre_cliente, u.apellido as apellido_cliente, estado from atencion a, usuario u, abogado ab where a.id_cliente = u.id and a.id_abogado = ab.id;";
       $atenciones = (new Atencion)->customQuery($query_atenciones)->fetchAll();
-            
+
       return ['clientes' =>  $clientes, 'atenciones' =>  $atenciones];
     }
 
