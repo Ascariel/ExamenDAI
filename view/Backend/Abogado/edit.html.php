@@ -11,10 +11,10 @@
 				</div>
 
 				<div class="form-group">
-					Nombre <input type="text" value="<?=$abogado['nombre_abogado']?>" name="abogado[nombre_abogado]" class="form-control ">
+					Nombre <input type="text" value="<?=$abogado['nombre']?>" name="abogado[nombre]" class="form-control ">
 				</div>
 				<div class="form-group">
-					Apellido <input type="text" value="<?=$abogado['apellido_abogado']?>" name="abogado[apellido_abogado]" class="form-control ">
+					Apellido <input type="text" value="<?=$abogado['apellido']?>" name="abogado[apellido]" class="form-control ">
 				</div>
 
 
