@@ -3,6 +3,7 @@ namespace Controller\Backend;
 
 use Library\Controller;
 use Model\Entity\Usuario;
+use Model\Entity\Atencion;
 
 
 class UsuarioController extends Controller {
@@ -73,6 +74,15 @@ class UsuarioController extends Controller {
       $categories = $category->select(["nombre", "id"]);
       $c2 =$category->select(["nombre", "id"]);
       return ["categories" => $categories, "c2" => $c2 , "title"=>"Listado Categorias"];
+    }
+
+    function estadisticasAction(){
+      $clientes = (new Usuario)->customQuery("select * from usuario where rol = 'Cliente'")->fetchAll();
+
+      $query_atenciones = "select id_atencion, ab.nombre as nombre_abogado, ab.apellido as apellido_abogado, u.nombre as nombre_cliente, u.apellido as apellido_cliente, estado from atencion a, usuario u, abogado ab where a.id_cliente = u.id and a.id_abogado = ab.id_abogado;";
+      $atenciones = (new Atencion)->customQuery($query_atenciones)->fetchAll();
+            
+      return ['clientes' =>  $clientes, 'atenciones' =>  $atenciones];
     }
 
     
