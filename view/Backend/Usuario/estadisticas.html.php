@@ -26,7 +26,6 @@
             <td><?= $row['rut'] ?></td>
             <td><?= $row['telefonos'] ?></td>
             <td><?= $row['direccion'] ?></td> 
-            <!-- <td><?= $valor_total ?></td>           -->
           </tr>
         <?php endforeach ?>
         <tr>
@@ -60,7 +59,6 @@
         <?php foreach($atenciones as $row): ?>
           <?php $atencion_id = $row['id'] ?>
           <?php $hora = strtotime($row['hora']); ?>
-          <?php $valor_total = $row['valor_total'] ?>
 
           <tr>
             <td><?= $row['id_atencion'] ?></td>
@@ -80,7 +78,7 @@
         </tr>   
         <tr>
             <td><b>Valor Total</b>  </td>
-            <td> <b><?= $valor_total ?></b></td>
+            <td> <b><?= $valor_total_atenciones ?></b></td>
         </tr>                
          
       </tbody>
