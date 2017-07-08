@@ -49,7 +49,9 @@ class AuthController extends Controller
             $this->redirect('/backend/usuario');
         } elseif ($usuario['rol'] == 'SECRETARIA') {
             $this->redirect('/backend/atencion');
-        }
+        } elseif ($usuario['rol'] == 'CLIENTE') {
+            $this->redirect('/backend/atencion/clienteAtencion');
+        } else
 
         $this->redirect('/backend/welcome');
     }
