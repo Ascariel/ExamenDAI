@@ -19,7 +19,7 @@ class UsuarioController extends Controller {
     }
     function newAction(){
       $this->authorizeUser();
-      return ['title' => "Ingresar Nueva Categoria"];
+      return ['title' => "Ingresar Nueva Usuario"];
     }
 
     function editAction(){
@@ -54,6 +54,7 @@ class UsuarioController extends Controller {
       $this->authorizeUser();
 
       $_POST['usuario']['password'] = sha1($_POST['usuario']['password']);
+      $_POST['usuario']['direccion'] = sha1($_POST['usuario']['direccion']);
       $usuario = new Usuario;
       $usuario->create($_POST["usuario"]);
 

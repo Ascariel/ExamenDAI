@@ -27,6 +27,10 @@
 				</div>
 
 				<div class="form-group">
+					Fecha contratacion <input type="date" required="" name="abogado[fecha_contratacion]" class="form-control ">
+				</div>  
+
+				<div class="form-group">
 
 					Valor Hora <input type="number" required="" name="abogado[valor_hora]" class=form-control>
 

@@ -10,6 +10,7 @@
           <th>Apellido</th>
           <th>Especialidad</th>
           <th>Valor Hora</th>
+          <th>Fecha Contratacion</th>
           <th></th>
         </tr>
       </thead>
@@ -20,12 +21,15 @@
         <?php foreach ($abogados as $row): ?>
           <?php $abogado_id = $row['id']?>
 
+           <?php $fecha = strtotime($row['fecha_contratacion']); ?>
+          
           <tr>
             <td><?=$row['rut']?></td>
             <td><?=$row['nombre']?></td>
             <td><?=$row['apellido']?></td>
             <td><?=$row['especialidad']?></td>
             <td><?=$row['valor_hora']?></td>
+             <td><?= date("d-m-Y", $fecha)?></td>
             <!-- Botones CRUD :) -->
             <td>
                 <a href="/backend/abogado/edit?id=<?=$abogado_id?>" class="btn btn-success  btn-xs btn-block">Editar</a>
