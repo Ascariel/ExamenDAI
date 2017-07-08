@@ -53,7 +53,7 @@ class AuthController extends Controller
             $this->redirect('/backend/atencion/clienteAtencion');
         } else
 
-        $this->redirect('/backend/welcome');
+        $this->redirect('/backend/usuario/estadisticas');
     }
 
     public function logoutAction()
