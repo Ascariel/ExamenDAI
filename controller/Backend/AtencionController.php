@@ -109,12 +109,18 @@ class AtencionController extends Controller {
       $atencion = new Atencion;
 
       $id = $_GET['id'];  
-      // $estado['estado'] = 'Anulada';
       (new Atencion)->customQuery("update atencion set estado = 'Perdida' where id_atencion = $id");
-
-      // $atencion->update($id, $estado);
-
       $this->redirect('/backend/atencion?success=true');
-    }       
+    }   
+
+    function realizadaAction(){
+      $this->authorizeUser();
+
+      $atencion = new Atencion;
+
+      $id = $_GET['id'];  
+      (new Atencion)->customQuery("update atencion set estado = 'Realizada' where id_atencion = $id");
+      $this->redirect('/backend/atencion?success=true');
+    }         
     
 }

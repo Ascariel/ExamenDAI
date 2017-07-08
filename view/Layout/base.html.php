@@ -74,6 +74,7 @@
                      <!-- Logica Gerente -->
 
                     <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'GERENTE'): ?>
+                        <li><a href="/backend/welcome/stats">Estadisticas</a></li>
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             Administrar <span class="caret"></span>
@@ -85,30 +86,8 @@
 
                           </ul>
                         </li>
-
-
-                  <?php endif?>
-
-
+                    <?php endif?>
                      <!-- Logica Gerente -->
-
-                     <!-- Logica Cliente -->
-          
-                       <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'GERENTE'): ?>
-                        <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                            Administrar <span class="caret"></span>
-                          </a>
-                          <ul class="dropdown-menu" role="menu" aria-labelledby="adminMenu">
-                            <li><a href="/backend/atencion">Atenciones</a></li>
-                            
-                          </ul>
-                        </li>
-
-
-                  <?php endif?>
-
-
 
                      <!-- Logica Cliente -->
                    <li><a href="/frontend/auth/logout">Cerrar Sesion</a></li>
