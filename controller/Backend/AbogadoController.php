@@ -61,7 +61,7 @@ class AbogadoController extends Controller {
 
       // $usuario = (new Usuario)->buscarPorID($_GET['id'])
       $id = $_GET['id'];
-      $abogado = (new Abogado)->customQuery("select * from abogado where id_abogado = $id")->fetch();
+      $abogado = (new Abogado)->customQuery("select * from abogado where id = $id")->fetch();
       // $usuario->select('*', "id='$id'")->fetch();
       return ['title' => "Ingresar Nueva Abogado", 'abogado'=> $abogado];
     }    

@@ -11,10 +11,10 @@
 				</div>
 
 				<div class="form-group">
-					Nombre <input type="text" required="" value="" name="abogado[nombre_abogado]" class="form-control ">
+					Nombre <input type="text" required="" value="" name="abogado[nombre]" class="form-control ">
 				</div>
 				<div class="form-group">
-					Apellido <input type="text" required=""  name="abogado[apellido_abogado]" class="form-control ">
+					Apellido <input type="text" required=""  name="abogado[apellido]" class="form-control ">
 				</div>
 
 				<div class="form-group">
