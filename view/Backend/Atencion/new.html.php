@@ -31,7 +31,7 @@
 				<div class="form-group">
 					<select name="atencion[id_abogado]" class="form-control">
 						<?php foreach ($abogados as $abogado): ?>
-							<option value="<?= $abogado['id_abogado'] ?>"><?= $abogado['nombre'] ?> <?= $abogado['apellido'] ?></option>
+							<option value="<?= $abogado['id'] ?>"><?= $abogado['nombre'] ?> <?= $abogado['apellido'] ?></option>
 						<?php endforeach ?>
 					</select>	
 				</div>				 			              

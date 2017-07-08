@@ -54,6 +54,7 @@ class AtencionController extends Controller {
 
 
       $atencion = new Atencion;
+      var_dump($_POST['atencion']);
       $atencion->create($_POST["atencion"]);
 
       $this->redirect('/backend/atencion');

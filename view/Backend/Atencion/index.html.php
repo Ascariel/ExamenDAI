@@ -9,6 +9,7 @@
           <th>Nombre Abogado</th>
           <th>Fecha</th>
           <th>Hora</th>
+          <th>Valor</th>
           <th>Estado</th>
           <th></th>
           <th></th>
@@ -29,6 +30,7 @@
             <td><?= $row['nombre_abogado'] ." " . $row['apellido_abogado'] ?></td>
             <td><?= date("d-m-Y", $fecha)?></td>
             <td><?= date("H:i", $hora) ?></td>
+            <td><?= $row['valor_hora'] ?></td>
             <td><?= $row['estado'] ?></td>
             <td><?= $row['direccion'] ?></td>
             <!-- Botones CRUD :) -->
