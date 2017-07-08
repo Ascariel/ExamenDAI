@@ -9,6 +9,7 @@
           <th>Apellido</th>
           <th>Rut</th>
           <th>Tipo Cliente</th>
+          <th>Perfil</th>
           <!-- <th>Fecha Creacion</th> -->
           <th>Telefono</th>
           <th>Direccion</th>
@@ -30,6 +31,7 @@
             <td><?= $row['apellido'] ?></td>
             <td><?= $row['rut'] ?></td>
             <td><?= $row['tipo_persona'] ?></td>
+            <td><?= $row['rol'] ?></td>
             <!-- <td><?= $row['fecha_nacimiento'] ?></td>  -->
             <td><?= $row['telefonos'] ?></td>
             <td><?= $$row['direccion'] ?></td>

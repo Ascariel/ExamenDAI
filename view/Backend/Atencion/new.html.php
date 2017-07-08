@@ -15,7 +15,7 @@
 				</div>  
 
 					<div class="form-group">
-					Hora<input type="time" required="" name="atencion[hora]" class="form-control" min="09:00" max="18:00" step="3600" ">
+					Hora<input type="time" required="" name="atencion[hora]" class="form-control" min="09:00" max="18:00" step="1800" ">
 				</div>  
 
 				<label>Cliente</label>

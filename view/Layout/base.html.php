@@ -31,7 +31,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <?php if (!empty($_SESSION['user'])): ?>
                     <li><a href="/backend/welcome">Inicio</a></li>
-                    <li><a href="javascript:void(0);"><small><b><?=$_SESSION['user']["nombre"] . ' ' . $_SESSION['user']["apellido"]?></b></small> </a>
+                    <li><a href="javascript:void(0);"><small><b><?=  ucwords($_SESSION['user']["nombre"] . ' ' . $_SESSION['user']["apellido"])?></b></small> </a>
                     </li>
 
                    <!-- LOGICA ADMIN -->

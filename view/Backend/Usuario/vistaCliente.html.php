@@ -23,7 +23,7 @@
 
           <tr>
             <td><?= $usuario_id ?></td>
-            <td><?= $row['nombre'] ?></td>
+            <td><?=  ucwords($row['nombre']) ?></td>
             <td><?= $row['apellido'] ?></td>
             <td><?= $row['rut'] ?></td>
             <!-- <td><?= $row['fecha_nacimiento'] ?></td>  -->

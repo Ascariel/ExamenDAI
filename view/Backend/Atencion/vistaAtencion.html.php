@@ -24,7 +24,7 @@
 
           <tr>
             <td><?= $row['id_atencion'] ?></td>
-            <td><?= $row['nombre_cliente']." " . $row['apellido_cliente']?></td>
+            <td><?=  ucwords($row['nombre_cliente']." " . $row['apellido_cliente'])?></td>
             <td><?= $row['nombre_abogado'] ." " . $row['apellido_abogado'] ?></td>
             <td><?= $row['fecha'] ?></td>
             <td><?= date("H:i", $hora) ?></td>
