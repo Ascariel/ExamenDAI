@@ -14,7 +14,7 @@ class AtencionController extends Controller {
     function indexAction() {
       $this->authorizeUser();
 
-      $query_atenciones = "select * from atencion;";
+      $query_atenciones = "select id_atencion, nombre_abogado, apellido_abogado, nombre, apellido, estado from atencion a, usuario u, abogado ab where a.id_cliente = u.id and a.id_abogado = ab.id_abogado;";
       $atenciones = (new Atencion)->customQuery($query_atenciones)->fetchAll();
       return ["atenciones" => $atenciones, "title"=>"Listado Atenciones"];
     }
@@ -89,5 +89,18 @@ class AtencionController extends Controller {
       return ["categories" => $categories, "c2" => $c2 , "title"=>"Listado Categorias"];
     }
 
+    function confirmarAction(){
+      $this->authorizeUser();
+
+      $atencion = new Atencion;
+
+      $id = $_GET['id'];  
+      // $estado['estado'] = 'Anulada';
+      (new Atencion)->customQuery("update atencion set estado = 'Confirmada' where id_atencion = $id");
+
+      // $atencion->update($id, $estado);
+
+      $this->redirect('/backend/atencion?success=true');
+    }    
     
 }

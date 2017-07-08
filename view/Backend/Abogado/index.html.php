@@ -18,20 +18,20 @@
       <tbody>
 
         <?php foreach ($abogados as $row): ?>
-          <?php $id_abogado = $row['id']?>
+          <?php $abogado_id = $row['id_abogado']?>
 
           <tr>
             <td><?=$row['rut']?></td>
-            <td><?=$row['nombre']?></td>
-            <td><?=$row['apellido']?></td>
+            <td><?=$row['nombre_abogado']?></td>
+            <td><?=$row['apellido_abogado']?></td>
             <td><?=$row['especialidad']?></td>
             <td><?=$row['valor_hora']?></td>
             <!-- Botones CRUD :) -->
             <td>
-                <a href="/backend/abogado/edit?id=<?=$id_abogado?>" class="btn btn-success  btn-xs btn-block">Editar</a>
+                <a href="/backend/abogado/edit?id=<?=$abogado_id?>" class="btn btn-success  btn-xs btn-block">Editar</a>
             </td>
             <td>
-                <a href="/backend/abogado/delete?id=<?=$id_abogado?>" class="btn btn-danger  btn-xs btn-block eliminar">Eliminar</a>
+                <a href="/backend/abogado/delete?id=<?=$abogado_id?>" class="btn btn-danger  btn-xs btn-block eliminar">Eliminar</a>
             </td>
           </tr>
         <?php endforeach?>

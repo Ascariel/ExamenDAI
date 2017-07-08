@@ -5,8 +5,8 @@
       <thead >
         <tr >
           <th>ID Solicitud</th>
-          <th>ID Cliente</th>
-          <th>ID Abogado</th>
+          <th>Nombre Cliente</th>
+          <th>Nombre Abogado</th>
           <th>Estado</th>
           <th></th>
         </tr>
@@ -20,8 +20,8 @@
 
           <tr>
             <td><?= $row['id_atencion'] ?></td>
-            <td><?= $row['id_cliente'] ?></td>
-            <td><?= $row['id_abogado'] ?></td>
+            <td><?= $row['nombre']." " . $row['apellido']?></td>
+            <td><?= $row['nombre_abogado'] ." " . $row['apellido_abogado'] ?></td>
             <td><?= $row['estado'] ?></td>
             <td><?= $row['direccion'] ?></td>
             <!-- Botones CRUD :) -->
@@ -33,7 +33,7 @@
                 <a href="/backend/atencion/anular?id=<?= $row['id_atencion']?>&estado=Perdida" class="btn btn-warning  btn-xs btn-block eliminar">Perdida</a>                  
             </td> 
             <td>
-                <a href="/backend/atencion/anular?id=<?= $row['id_atencion']?>&estado=Confirmada" class="btn btn-success  btn-xs btn-block eliminar">Confirmar</a>                  
+                <a href="/backend/atencion/confirmar?id=<?= $row['id_atencion']?>&estado=Confirmada" class="btn btn-success  btn-xs btn-block eliminar">Confirmar</a>                  
             </td>                                   
           </tr>
         <?php endforeach ?>
