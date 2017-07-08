@@ -22,8 +22,8 @@
 
           <tr>
             <td><?=$row['rut']?></td>
-            <td><?=$row['nombre_abogado']?></td>
-            <td><?=$row['apellido_abogado']?></td>
+            <td><?=$row['nombre']?></td>
+            <td><?=$row['apellido']?></td>
             <td><?=$row['especialidad']?></td>
             <td><?=$row['valor_hora']?></td>
             <!-- Botones CRUD :) -->

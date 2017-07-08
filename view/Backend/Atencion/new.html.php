@@ -11,8 +11,13 @@
                 <input type="hidden" name="atencion[estado]" value="Agendada">     
 
 				<div class="form-group">
-					Fecha<input type="text"  name="atencion[fecha_hora]" class="form-control ">
-				</div>              	
+					Fecha<input type="date" required="" name="atencion[fecha]" class="form-control ">
+				</div>  
+
+					<div class="form-group">
+					Hora<input type="time" required="" name="atencion[hora]" class="form-control" min="09:00" max="18:00" step="3600" ">
+				</div>  
+
 				<label>Cliente</label>
 				<div class="form-group">
 					<select name="atencion[id_cliente]" class="form-control">
@@ -36,7 +41,7 @@
 						<button type="submit" class="btn btn-success btn-block">Registrar</button>
 					</div>
 					<div class="col-md-6">
-						<a class="btn btn-default btn-block" href="#">Volver</a>
+						<a class="btn btn-default btn-block" href="/backend/atencion">Volver</a>
 					</div>
 				</div>
 			</form>
